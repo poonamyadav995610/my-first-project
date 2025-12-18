@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nature Scene</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .sky {
+      background: linear-gradient(to top, #87ceeb, #b0e0e6);
+      height: 70%;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ground {
+      background-color: #skyblue;
+      height: 30%;
+      position: relative;
+    }
+
+    .sun, .moon {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      top: 10%;
+    }
+
+    .sun {
+      background: yellow;
+      animation: moveSun 20s linear infinite;
+    }
+
+    .moon {
+      background: lightgray;
+      left: 85%;
+      opacity: 0.6;
+    }
+
+    @keyframes moveSun {
+      0% { left: -100px; top: 10%; }
+      50% { left: 50%; top: 5%; }
+      100% { left: 110%; top: 10%; }
+    }
+
+    .house {
+      position: absolute;
+      left: 20%;
+      bottom: 0;
+      width: 100px;
+      height: 100px;
+      background: brown;
+      border: 2px solid black;
+    }
+
+    .house::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 100px;
+      height: 50px;
+      background: darkred;
+      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    }
+
+    .pond {
+      position: absolute;
+      right: 10%;
+      bottom: 10px;
+      width: 120px;
+      height: 60px;
+      background: #00BFFF;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    .grass {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 30px;
+      background: green;
+    }
+
+    .woman {
+      position: absolute;
+      bottom: 30px;
+      left: 60%;
+      width: 30px;
+      height: 60px;
+      background: pink;
+      border-radius: 10px;
+    }
+
+    .woman::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+      background: #ffe0bd;
+      border-radius: 50%;
+    }
+
+    .rain {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: linear-gradient(transparent, rgba(0, 0, 255, 0.3));
+      background-size: 2px 100px;
+      animation: rainFall 1s linear infinite;
+      opacity: 0;
+      z-index: 10;
+    }
+
+    @keyframes rainFall {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 100px; }
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background: #fff;
+      border: 1px solid #000;
+      cursor: pointer;
+      z-index: 20;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sky">
+    <div class="sun"></div>
+    <div class="moon"></div>
+    <div class="rain"></div>
+    <div class="toggle-btn" onclick="toggleRain()">☔ Toggle Rain</div>
+  </div>
+
+  <div class="ground">
+    <div class="grass"></div>
+    <div class="house"></div>
+    <div class="pond"></div>
+    <div class="woman"></div>
+  </div>
+
+  <script>
+    let raining = false;
+    function toggleRain() {
+      raining = !raining;
+      document.querySelector('.rain').style.opacity = raining ? '1' : '0';
+    }
+  </script>
+
+</body>
+</html>

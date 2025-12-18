@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>HTML FORM</title>
+	<style type="text/css">
+	body{
+		font-size: 16px;
+		background: skyblue;
+	}
+	h2{
+		text-align: center;
+		border-bottom: 2px solid grey;
+	}
+	form{
+		width: 300px;
+		background: white;
+		padding: 15px 40px 40px;
+		margin: 50px auto 0;
+		border: 2px solid #ccc;
+		input, select{
+			border: 1px solid #ccc;
+			padding: 10px;
+			width: 100%;
+			box-sizing: border-box;
+			border-radius: 2pxs;
+		}
+		lable{
+			display: block;
+			margin-bottom: 6px;
+		}
+		div{
+			padding-bottom: 12px;
+		}
+		.form-inline{
+			border: 1px solid #ccc;
+			border-radius: 2pxs;
+			padding: 8px 10px 4px;
+
+		}
+		.form-inline lable,.form-inline input{
+			display: inline-block;
+			width: auto;
+			padding-right: 15px;
+		}
+		input[type="submit"]{
+			font-size: 20px;
+			background: red;
+			border-color: green;
+			box-shadow: 0 3px 0 grey;
+			color: white;
+			margin: 10px;
+			cursor: pointer;
+		}
+	}
+
+
+</style>
+
+</head>
+<body>
+	<h2 style="background-color: pink ;">Ragitation form</h2>
+	<form>
+		<div>
+			<label>Candidate name</label>
+			<input type="text" name="">
+		</div>
+		<div>
+			<label>Email ID</label>
+			<input type="Email id" name="">
+		</div>
+		<div>
+			<label>Mobile Number</label>
+			<input type="mobile" name="">
+		</div>
+		<div>
+			<label>Course</label>
+			<select name="Course">
+				<option>CCC</option>
+				<option>Olevel</option>
+				<option>A level</option>
+				<option>DCA</option>
+			</select>
+		</div>
+		<div>
+			<label>Gender</label>
+			<div class="form-inline">
+				<label>
+					<input type="radio" name="Gender" value="male">male
+				</label>
+				<label>
+					<input type="radio" name="Gender" value="femail">femil
+				</label>
+			</div>
+		</div>
+		<label>cotegry</label>
+			<div class="form-inline">
+				<label>
+					<input type="checkbox" name="cat" value="gen">gen
+				</label>
+				<label>
+					<input type="checkbox" name="cat" value="obc">OBC
+				</label>
+				<label>
+					<input type="checkbox" name="cat" value="st">st
+				</label>
+				<label>
+					<input type="checkbox" name="cat" value="sc">sc
+				</label>
+				<div style="red">
+				<input type="sumit" name="" value="Ragiter">
+				<input type="sumit">
+			</div>
+				
+
+			</div>
+		</div>
+
+	</form>
+
+</body>
+</html>
